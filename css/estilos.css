@@ -124,12 +124,17 @@ h2
 
 .proyect-details
 {
-  width: 500px;
+  width: 50%;
 }
 
 .proyect-imageContainer
 {
-  width: 500px;
+  width: 50%;
+}
+
+.proyect-imageContainer img
+{
+  max-width: 100%;
 }
 
 .header
@@ -381,10 +386,42 @@ figure
   .header .logo{
     text-align: center;
   }
+  .proyect{
+    display: block;
+  }
+  .proyect-imageContainer{
+    width: auto;
+    text-align: center;
+  }
+  .proyect-details{
+    width: auto;
+    /* font-size: 16px; */
+  }
+  .proyect-course, .proyect-date, .proyect-url{
+    margin: .3em 0;
+  }
+  .proyect-title{
+    font-size: 1.5em;
+    margin-bottom: .3em;
+  }
+  .proyect-url{
+    font-size: 1em;
+  }
+  .proyect-course{
+    font-size: .7em;
+  }
+  .proyect-date{
+    font-size: 1em;
+  }
+  .proyect-description{
+    font-size: .8em;
+  }
 }
 
 @media screen and (max-width: 480px){     /*Iphone 30*/
-  
+  .proyect-details{
+    font-size: 12px;
+  }
 }
 
 @media screen and (max-width: 320px){     /*Alcatel*/
