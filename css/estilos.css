@@ -366,7 +366,9 @@ figure
 
 /* --- Responsive Design  --- */
 @media screen and (max-width: 1024px){    /*Escritorio*/
-
+  .container{
+    padding: 0 1em;
+  }
 }
 
 @media screen and (max-width: 767px){     /*IPad*/
@@ -433,6 +435,23 @@ figure
 @media screen and (max-width: 480px){     /*Iphone 30*/
   .proyect-details{
     font-size: 12px;
+  }
+  .contact{
+    height: auto;
+    padding: 1.5em 0;
+    text-align: center;
+    display: block;
+  }
+  .form-email button{
+    margin: 1em auto;
+  }
+  .form-email h3{
+    margin-top: 0;
+  }
+  .footer{
+    display: block;
+    text-align: center;
+    border: 1px solid transparent;
   }
 }
 
