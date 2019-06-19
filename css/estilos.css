@@ -21,7 +21,7 @@ body
 h1, h2, h3, h4, h5, h6
 {
   font-family: 'Fjalla One', sans-serif;
-  font-weight: normal; //tipo de fuente
+  font-weight: normal; /*tipo de fuente*/
   /*font-style: italic; {cursiva}*/
 }
 
@@ -64,6 +64,7 @@ h2
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .hero-image
@@ -87,6 +88,7 @@ h2
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   /*border-top: 10px solid red; tamaño-tipo-estilo
   /*border-right: 10px solid green;
   border-left: 10px solid orange;
@@ -122,12 +124,17 @@ h2
 
 .proyect-details
 {
-  width: 500px;
+  width: 50%;
 }
 
 .proyect-imageContainer
 {
-  width: 500px;
+  width: 50%;
+}
+
+.proyect-imageContainer img
+{
+  max-width: 100%;
 }
 
 .header
@@ -138,6 +145,7 @@ h2
   height: 70px;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .header ol
@@ -150,8 +158,6 @@ h2
 .header ol li
 {
   height: inherit;
-  display: flex;
-  align-items: center;
 }
 
 .header a
@@ -207,6 +213,7 @@ figure
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .footer img
@@ -232,8 +239,8 @@ figure
 
 .event
 {
-  margin: 10px;
-  width: 480px;
+  margin: 1%;
+  width: 48%;
   border-radius: 10px;
   overflow: hidden;
   background: #f4fbff;
@@ -268,7 +275,7 @@ figure
   border-radius: 5px;
   padding: 5px 20px;
   text-decoration: none;
-  color: #056fffs
+  color: #056fff;
 }
 
 .contact
@@ -279,6 +286,7 @@ figure
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .social-link
@@ -345,11 +353,135 @@ figure
 .container
 {
   /*border: 1px solid red;*/
-  width: 1100px;
+  max-width: 1000px;
+  /*width: 100%;*/
+  flex: 1;
   margin: 0 auto;
   display: inherit;
   justify-content: inherit;
   align-items: inherit;
   height: inherit;
   flex-wrap: inherit;
+}
+
+/* --- Responsive Design  --- */
+@media screen and (max-width: 1024px){    /*Escritorio*/
+  .container{
+    padding: 0 1em;
+  }
+  .hero{
+    height: auto;
+    position: relative;
+    overflow: hidden;
+    padding: 2em;
+  }
+  .hero-image{
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+  }
+  h1{
+    font-size: 2em;
+    z-index: 2;
+  }
+}
+
+@media screen and (max-width: 767px){     /*IPad*/
+  .header{
+    display: block;
+    height: auto;
+  }
+  .header ol{
+    display: initial;
+  }
+  .header ol li{
+    height: 50px;
+  }
+  .header a{
+    justify-content: center;
+  }
+  .header .logo{
+    text-align: center;
+  }
+  .proyect{
+    display: block;
+  }
+  .proyect-imageContainer{
+    width: auto;
+    text-align: center;
+  }
+  .proyect-details{
+    width: auto;
+    /* font-size: 16px; */
+  }
+  .proyect-course, .proyect-date, .proyect-url{
+    margin: .3em 0;
+  }
+  .proyect-title{
+    font-size: 1.5em;
+    margin-bottom: .3em;
+  }
+  .proyect-url{
+    font-size: 1em;
+  }
+  .proyect-course{
+    font-size: .7em;
+  }
+  .proyect-date{
+    font-size: 1em;
+  }
+  .proyect-description{
+    font-size: .8em;
+  }
+
+  .event{
+    width: auto;
+  }
+  .event img{
+    width: 100%;
+  }
+  .event-detail{
+    /*1em=16px*/
+    margin: -2em .5em .5em;
+    padding: 1em;
+  }
+}
+
+@media screen and (max-width: 480px){     /*Iphone 30*/
+  h1{
+    font-size: 1.5em;
+  }
+  .proyect-details{
+    font-size: 12px;
+  }
+  .contact{
+    height: auto;
+    padding: 1.5em 0;
+    text-align: center;
+    display: block;
+  }
+  .form-email button{
+    margin: 1em auto;
+  }
+  .form-email h3{
+    margin-top: 0;
+  }
+  .footer{
+    display: block;
+    text-align: center;
+    border: 1px solid transparent;
+  }
+}
+
+@media screen and (max-width: 320px){     /*Alcatel*/
+  h1{
+    font-size: 1.2em;
+  }
+  .hero{
+    padding: 2em 1em;
+  }
 }
